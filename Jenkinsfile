@@ -24,7 +24,7 @@ pipeline{
 
         stage ('Deploy Kubernets') {
             environment {
-                tag_version = "${env.BUIL_ID}"
+                tag_version = "${env.BUILD_ID}"
             }
             steps {
                 withKubeConfig([credentialsId: 'kubeconfig']){
